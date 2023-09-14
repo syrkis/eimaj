@@ -19,6 +19,7 @@ You need the following software and libraries installed to run eimaj:
 - obs-websocket-py
 - pynput
 - rumps
+
 You can install most of these libraries using pip:
 `pip install -r requirements.txt`
 Also, you need to have OBS Studio with the WebSocket plugin installed for eimaj to control scene switching.
