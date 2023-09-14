@@ -2,7 +2,7 @@
 
 ## Overview
 
-eimaj is an AI-based scene switching application for OBS (Open Broadcast Software) that automatically switches between two scenes, based on hand presence and user input detection. It uses computer vision and machine learning techniques for effective and seamless transitions.
+eimaj is an AI-based scene switching application for OBS (Open Broadcast Software) that automatically switches between two scenes, based on hand presence and user input detection. It uses computer vision and machine learning techniques for effective and seamless transitions. Feel free to add to or modify the code to suit your needs.
 
 ## Features
 
