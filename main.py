@@ -19,11 +19,11 @@ class App(rumps.App):
 
     def __init__(self):
         super(App, self).__init__('eimaj')
-        self.menu = ['Start']
         self.input_detected = False
         self.control_loop = threading.Thread(target=self.control_loop)
+        self.start(None)
+
     
-    @rumps.clicked("Start")
     def start(self, _):
         # Start the control loop when 'Start' button is clicked
         self.ws = get_obs()
@@ -38,9 +38,9 @@ class App(rumps.App):
         while True:
             frame = self.capture()
             if self.has_hands(frame) and not self.input_detected:
-                self.ws.call(requests.SetCurrentProgramScene(sceneName='webcam_scene'))
+                self.ws.call(requests.SetCurrentProgramScene(sceneName='Master-Webcam'))
             if self.input_detected:
-                self.ws.call(requests.SetCurrentProgramScene(sceneName='screen_scene'))
+                self.ws.call(requests.SetCurrentProgramScene(sceneName='Master-Desktop'))
                 self.input_detected = False
             time.sleep(1)
 
