@@ -1,45 +1,54 @@
-# eimaj: AI-Based Scene Switching for OBS
+# OBS Scene Switcher with Dynamic Monitoring
 
-## Overview
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
-eimaj is an AI-based scene switching application for OBS (Open Broadcast Software) that automatically switches between two scenes, based on hand presence and user input detection. It uses computer vision and machine learning techniques for effective and seamless transitions. Feel free to add to or modify the code to suit your needs.
+## Introduction
 
-## Features
-
-- Hand Detection: eimaj uses the MediaPipe machine learning framework to detect the presence of hands in the webcam feed. If two hands are detected, eimaj switches to a scene named 'webcam_scene' in OBS.
-- Input Detection: eimaj listens for mouse and keyboard inputs. If any such input is detected, eimaj switches to a different scene named 'screen_scene' in OBS.
-- Easy to Use: eimaj presents a simple menu interface for starting the scene-switching service. Once started, eimaj runs quietly in the background, monitoring the webcam feed and user inputs, and switches scenes in OBS accordingly.
+This Python application offers a new way to interact with your OBS setup, providing a more dynamic and natural user experience. Using advanced neural network algorithms, the app constantly analyzes your webcam feed to detect the presence of both hands. When two hands are visible, it automatically switches to the webcam view in OBS. Additionally, the app monitors for trackpad or keyboard inputs to switch back to screen recording when necessary.
 
 ## Requirements
 
-You need the following software and libraries installed to run eimaj:
-- Python 3.11 or newer
-- OpenCV
-- MediaPipe
-- obs-websocket-py
-- pynput
-- rumps
+- Python 3.11
+- OBS Studio
+- Web camera
 
-You can install most of these libraries using pip:
-`pip install -r requirements.txt`
-Also, you need to have OBS Studio with the WebSocket plugin installed for eimaj to control scene switching.
+## Installation
 
-## Configuration
-
-You need to configure OBS Websocket settings (server address and password) to match yours in the ﻿get_obs function.
-Default configuration:
-ws = obsws('localhost', 4445, password='123456')
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Run `pip install -r requirements.txt`.
 
 ## Usage
 
-Start the application by running the ﻿main.py file:
+Run the application using the following command:
+
+```bash
 python main.py
-Once started, click on the 'Start' option in the eimaj app menu on your system's menu bar. The app will now start monitoring for hand presence in the webcam feed and user inputs.
-As per the currently active scene in OBS, eimaj will switch between 'webcam_scene' (when two hands are detected and there's no user input) and 'screen_scene' (when there's a user input).
-Note
-- Please make sure that you have the corresponding scenes (i.e., 'webcam_scene' and 'screen_scene') set up in OBS.
-- OBS Studio must be running for the scene-switching functionality to work.
+```
+
+## Features
+
+- **Dynamic Scene Switching**: Say goodbye to manual scene switching. Make your presentations and broadcasts more interactive.
+- **Neural Network Analysis**: Sophisticated algorithms ensure accurate hand detection for seamless scene transitions.
+- **Input Monitoring**: Automatically revert to your screen recording when keyboard or trackpad activity is detected.
+
+## Technologies
+
+- Python 3.11
+- Neural Networks
+- OBS Studio API
+
+## Contributing
+
+If you find a bug or want to contribute to the development of this application, feel free to open an issue or submit a pull request. Currently only works on MacOS.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License
